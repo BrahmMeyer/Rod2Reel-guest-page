@@ -400,7 +400,7 @@
       <span class="btn-icon">⭐</span>
       Leave Us a Review — 30 Seconds
     </a>
-    <a id="downloadBtn" href="#" class="btn btn-download" download style="display:none;">
+    <a id="downloadBtn" href="#" class="btn btn-download" style="display:none;" onclick="downloadVideo(this.href); return false;">
       <span class="btn-icon">⬇️</span>
       Download My Reel
     </a>
@@ -473,6 +473,24 @@ function copyPost(textId, toastId) {
     toast.innerText = '✓ Copied!';
     setTimeout(function() { toast.innerText = 'Tap to copy'; }, 2000);
   });
+}
+
+function downloadVideo(url) {
+  fetch(url)
+    .then(response => response.blob())
+    .then(blob => {
+      const blobUrl = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = blobUrl;
+      a.download = 'my-fishing-reel.mp4';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      window.URL.revokeObjectURL(blobUrl);
+    })
+    .catch(() => {
+      window.open(url, '_blank');
+    });
 }
 
 function getParam(name) {
