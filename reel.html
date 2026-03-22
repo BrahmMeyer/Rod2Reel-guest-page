@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -28,7 +28,6 @@
     overflow-x: hidden;
   }
 
-  /* HEADER */
   .header {
     position: relative;
     padding: 32px 24px 24px;
@@ -75,14 +74,12 @@
     margin: 16px auto 0;
   }
 
-  /* MAIN CONTENT */
   .content {
     max-width: 480px;
     margin: 0 auto;
     padding: 24px 16px 40px;
   }
 
-  /* VIDEO */
   .video-wrap {
     position: relative;
     border-radius: 16px;
@@ -114,7 +111,6 @@
     border-radius: 20px;
   }
 
-  /* BUTTONS */
   .btn-group {
     display: flex;
     flex-direction: column;
@@ -165,7 +161,6 @@
     font-size: 18px;
   }
 
-  /* SOCIAL SECTION */
   .social-section {
     background: var(--surface);
     border: 1px solid var(--border);
@@ -206,27 +201,6 @@
     overflow: hidden;
   }
 
-  .post-card::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    width: 3px;
-    background: var(--gold);
-    opacity: 0;
-    transition: opacity 0.2s ease;
-  }
-
-  .post-card:hover {
-    border-color: var(--subtle);
-    transform: translateX(3px);
-  }
-
-  .post-card:hover::before {
-    opacity: 1;
-  }
-
   .post-text {
     font-size: 14px;
     line-height: 1.6;
@@ -249,72 +223,21 @@
 
   .copy-icon {
     font-size: 14px;
-    opacity: 1;
-    filter: brightness(10);
-    transition: opacity 0.2s;
   }
 
-  .post-card:hover .copy-icon {
-    opacity: 0.8;
-  }
-
-  .copied-toast {
-    display: none;
-    font-size: 11px;
-    color: var(--gold);
-    font-weight: 600;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-  }
-
-  /* HASHTAGS */
-  .hashtag-box {
-    background: var(--surface2);
-    border: 1px dashed var(--subtle);
-    border-radius: 10px;
-    padding: 12px 14px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    margin-top: 4px;
-  }
-
-  .hashtag-box:hover {
-    border-color: var(--gold);
-    background: rgba(245,166,35,0.05);
-  }
-
-  .hashtag-text {
-    font-size: 13px;
-    color: #4A9EFF;
-    line-height: 1.6;
-    word-break: break-word;
-  }
-
-  .hashtag-copy-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 8px;
-  }
-
-  /* LOGO */
   .logo-section {
     text-align: center;
     padding: 8px 0 8px;
     display: none;
     border-top: 1px solid var(--border);
-    margin-top: 0;
   }
 
   .logo-section img {
     max-width: 624px;
     max-height: 312px;
     object-fit: contain;
-    opacity: 0.9;
-    filter: brightness(1.2) drop-shadow(0 0 20px rgba(245,166,35,0.6)) drop-shadow(0 0 40px rgba(245,166,35,0.3));
   }
 
-  /* FOOTER */
   .footer {
     text-align: center;
     padding: 20px;
@@ -324,27 +247,9 @@
     text-transform: uppercase;
   }
 
-  .footer span {
-    color: var(--gold);
-    opacity: 0.6;
-  }
-
-  /* LOADING STATE */
   .loading-state {
     text-align: center;
     padding: 60px 24px;
-  }
-
-  .fish-emoji {
-    font-size: 48px;
-    display: block;
-    margin-bottom: 16px;
-    animation: bob 2s ease-in-out infinite;
-  }
-
-  @keyframes bob {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
   }
 
   .loading-text {
@@ -353,201 +258,43 @@
     letter-spacing: 3px;
     color: var(--muted);
   }
-
-  /* FADE IN */
-  .fade-in {
-    animation: fadeIn 0.6s ease forwards;
-  }
-
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  /* MOBILE OPTIMIZATIONS */
-  @media (max-width: 480px) {
-    .content { padding: 20px 12px 40px; }
-    .btn { padding: 15px 20px; font-size: 14px; }
-  }
 </style>
 </head>
 <body>
 
-<!-- HEADER -->
 <div class="header">
-  <div class="charter-name" id="charterName">🎣</div>
-  <div class="tagline" id="tagline">Your highlight reel is ready</div>
+  <div class="charter-name" id="charterName"></div>
+  <div class="tagline">Your highlight reel is ready</div>
   <div class="gold-line"></div>
 </div>
 
-<!-- MAIN CONTENT -->
 <div class="content">
 
-  <!-- LOADING STATE -->
-  <div class="loading-state" id="loadingState">
-    <span class="fish-emoji">🎣</span>
+  <div class="loading-state">
+    <span class="fish-emoji"></span>
     <div class="loading-text">Loading your reel...</div>
   </div>
 
-  <!-- VIDEO -->
   <div class="video-wrap" id="videoWrap">
     <div class="video-badge">Your Reel</div>
-    <video id="mainVideo" controls playsinline preload="metadata"></video>
+    <video id="mainVideo" controls></video>
   </div>
 
-  <!-- BUTTONS -->
-  <div class="btn-group" id="btnGroup" style="display:none;">
-    <a id="reviewBtn" href="#" class="btn btn-review" style="display:none;" target="_blank">
-      <span class="btn-icon">⭐</span>
-      Leave Us a Review — 30 Seconds
-    </a>
-    <a id="downloadBtn" href="#" class="btn btn-download" style="display:none;" onclick="downloadVideo(this.href); return false;">
-      <span class="btn-icon">⬇️</span>
-      Download My Reel
-    </a>
+  <div class="btn-group">
+    <a class="btn btn-review">Leave Us a Review — 30 Seconds</a>
+    <a class="btn btn-download">Download My Reel</a>
   </div>
 
-  <!-- SOCIAL POSTS -->
-  <div class="social-section" id="socialSection">
-    <div class="section-label">📲 Share your catch</div>
-
-    <div class="post-card" onclick="copyPost('post1txt','toast1')">
-      <div class="post-text" id="post1txt"></div>
-      <div class="copy-row">
-        <span class="copy-hint" id="toast1">Tap to copy</span>
-        <span class="copy-icon">📋</span>
-      </div>
-    </div>
-
-    <div class="post-card" onclick="copyPost('post2txt','toast2')">
-      <div class="post-text" id="post2txt"></div>
-      <div class="copy-row">
-        <span class="copy-hint" id="toast2">Tap to copy</span>
-        <span class="copy-icon">📋</span>
-      </div>
-    </div>
-
-    <div class="post-card" onclick="copyPost('post3txt','toast3')">
-      <div class="post-text" id="post3txt"></div>
-      <div class="copy-row">
-        <span class="copy-hint" id="toast3">Tap to copy</span>
-        <span class="copy-icon">📋</span>
-      </div>
-    </div>
-
-
-  </div>
-
-  <!-- LOGO -->
-  <div class="logo-section" id="logoSection">
-    <img id="charterLogo" src="" alt="Charter Logo"/>
+  <div class="social-section">
+    <div class="section-label">📲 Your Social Captions</div>
   </div>
 
   <div class="footer">
-    <div style="color:#F5A623;font-size:14px;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px;">Powered by Rod2Reel</div>
-    <div style="color:#ffffff;font-size:11px;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px;">Fishing Charter Marketing on Steroids</div>
-    <div style="color:#ffffff;font-size:11px;letter-spacing:1px;margin-bottom:4px;">www.rod2reel.com</div>
-    <div style="color:#ffffff;font-size:11px;letter-spacing:1px;">hello@rod2reel.com</div>
+    <div>Powered by Rod2Reel</div>
+    <div>Charter Marketing on Steroids</div>
   </div>
 
 </div>
-
-<script>
-function copyPost(textId, toastId) {
-  const text = document.getElementById(textId).innerText;
-  const toast = document.getElementById(toastId);
-  navigator.clipboard.writeText(text).then(function() {
-    toast.innerText = '✓ Copied!';
-    toast.style.color = '#F5A623';
-    setTimeout(function() {
-      toast.innerText = 'Tap to copy';
-      toast.style.color = '';
-    }, 2000);
-  }).catch(function() {
-    const el = document.createElement('textarea');
-    el.value = text;
-    document.body.appendChild(el);
-    el.select();
-    document.execCommand('copy');
-    document.body.removeChild(el);
-    toast.innerText = '✓ Copied!';
-    setTimeout(function() { toast.innerText = 'Tap to copy'; }, 2000);
-  });
-}
-
-function downloadVideo(url) {
-  fetch(url)
-    .then(response => response.blob())
-    .then(blob => {
-      const blobUrl = window.URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = blobUrl;
-      a.download = 'my-fishing-reel.mp4';
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      window.URL.revokeObjectURL(blobUrl);
-    })
-    .catch(() => {
-      window.open(url, '_blank');
-    });
-}
-
-function getParam(name) {
-  const val = new URLSearchParams(window.location.search).get(name);
-  return val ? decodeURIComponent(val) : '';
-}
-
-window.onload = function() {
-  const name     = getParam('name');
-  const videoUrl = getParam('video');
-  const logo     = getParam('logo');
-  const review   = getParam('review');
-  const post1    = getParam('post1');
-  const post2    = getParam('post2');
-  const post3    = getParam('post3');
-  const hashtags = getParam('hashtags');
-
-  document.getElementById('loadingState').style.display = 'none';
-
-  if (name) {
-    document.getElementById('charterName').innerText = name;
-    document.title = name + ' — Your Fishing Reel';
-  } else {
-    document.getElementById('charterName').innerText = 'Your Fishing Reel';
-  }
-
-  if (videoUrl) {
-    document.getElementById('mainVideo').src = videoUrl;
-    document.getElementById('videoWrap').style.display = 'block';
-    document.getElementById('videoWrap').classList.add('fade-in');
-    document.getElementById('downloadBtn').href = videoUrl;
-    document.getElementById('downloadBtn').style.display = 'flex';
-    document.getElementById('btnGroup').style.display = 'flex';
-  }
-
-  if (review) {
-    document.getElementById('reviewBtn').href = review;
-    document.getElementById('reviewBtn').style.display = 'flex';
-  }
-
-  if (post1 || post2 || post3) {
-    document.getElementById('socialSection').style.display = 'block';
-    document.getElementById('socialSection').classList.add('fade-in');
-    document.getElementById('post1txt').innerText = post1;
-    document.getElementById('post2txt').innerText = post2;
-    document.getElementById('post3txt').innerText = post3;
-    if (hashtags) {
-      document.getElementById('hashtagsTxt').innerText = hashtags;
-    }
-  }
-
-  if (logo) {
-    document.getElementById('charterLogo').src = logo;
-    document.getElementById('logoSection').style.display = 'block';
-  }
-};
-</script>
 
 </body>
 </html>
