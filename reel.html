@@ -20,7 +20,7 @@ body { background: var(--bg); font-family: 'DM Sans', sans-serif; color: var(--t
 .video-badge { position: absolute; top: 12px; left: 12px; background: rgba(0,0,0,0.7); backdrop-filter: blur(8px); border: 1px solid rgba(245,166,35,0.3); color: var(--gold); font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; padding: 5px 10px; border-radius: 20px; }
 .btn-group { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
 .btn { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 16px 24px; border-radius: 12px; font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 600; text-decoration: none; cursor: pointer; border: none; transition: all 0.2s ease; letter-spacing: 0.3px; }
-.btn-review { background: var(--gold); color: #000; }
+.btn-review { background: var(--gold); color: #000; margin-top: 12px; margin-bottom: 24px; }
 .btn-review:hover { background: var(--gold-dark); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(245,166,35,0.3); }
 .btn-download { background: var(--surface2); color: var(--text); border: 1px solid var(--border); }
 .btn-download:hover { background: var(--subtle); transform: translateY(-1px); }
@@ -62,14 +62,13 @@ body { background: var(--bg); font-family: 'DM Sans', sans-serif; color: var(--t
         <div class="video-badge">Your Reel</div>
         <video id="mainVideo" controls playsinline preload="metadata"></video>
     </div>
+    
     <div class="btn-group" id="btnGroup" style="display:none;">
-        <a id="reviewBtn" href="#" class="btn btn-review" style="display:none;" target="_blank">
-            <span class="btn-icon">⭐</span> Leave Us a Review — 30 Seconds
-        </a>
         <a id="downloadBtn" href="#" class="btn btn-download" style="display:none;" onclick="downloadVideo(this.href); return false;">
             <span class="btn-icon">⬇️</span> Download My Reel
         </a>
     </div>
+
     <div class="social-section" id="socialSection">
         <div class="section-label">Your Social Captions</div>
         <div class="post-card" onclick="copyPost('post1txt','toast1')">
@@ -94,9 +93,15 @@ body { background: var(--bg); font-family: 'DM Sans', sans-serif; color: var(--t
             </div>
         </div>
     </div>
+
+    <a id="reviewBtn" href="#" class="btn btn-review" style="display:none;" target="_blank">
+        <span class="btn-icon">⭐</span> Leave Us a Review — 30 Seconds
+    </a>
+
     <div class="logo-section" id="logoSection">
         <img id="charterLogo" src="" alt="Charter Logo"/>
     </div>
+
     <div class="footer">
         <div style="color:#F5A623;font-size:14px;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px;">Powered by Rod2Reel</div>
         <div style="color:#ffffff;font-size:11px;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px;">Charter Marketing on Steroids</div>
@@ -104,6 +109,7 @@ body { background: var(--bg); font-family: 'DM Sans', sans-serif; color: var(--t
         <div style="color:#ffffff;font-size:11px;letter-spacing:1px;">hello@rod2reel.com</div>
     </div>
 </div>
+
 <script>
 function copyPost(textId, toastId) {
     const text = document.getElementById(textId).innerText;
