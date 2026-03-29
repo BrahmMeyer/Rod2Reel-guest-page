@@ -20,9 +20,11 @@ body { background: var(--bg); font-family: 'DM Sans', sans-serif; color: var(--t
 .video-badge { position: absolute; top: 12px; left: 12px; background: rgba(0,0,0,0.7); backdrop-filter: blur(8px); border: 1px solid rgba(245,166,35,0.3); color: var(--gold); font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; padding: 5px 10px; border-radius: 20px; }
 .btn-group { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
 .btn { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 16px 24px; border-radius: 12px; font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 600; text-decoration: none; cursor: pointer; border: none; transition: all 0.2s ease; letter-spacing: 0.3px; }
-.btn-review { background: var(--gold); color: #000; margin-top: 12px; margin-bottom: 24px; }
+/* Review Button styling (Now at the Top) */
+.btn-review { background: var(--gold); color: #000; margin-bottom: 10px; }
 .btn-review:hover { background: var(--gold-dark); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(245,166,35,0.3); }
-.btn-download { background: var(--surface2); color: var(--text); border: 1px solid var(--border); }
+/* Download Button styling (Now at the Bottom) */
+.btn-download { background: var(--surface2); color: var(--text); border: 1px solid var(--border); margin-top: 20px; margin-bottom: 24px; }
 .btn-download:hover { background: var(--subtle); transform: translateY(-1px); }
 .btn-icon { font-size: 18px; }
 .social-section { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 20px; margin-bottom: 8px; display: none; }
@@ -36,7 +38,8 @@ body { background: var(--bg); font-family: 'DM Sans', sans-serif; color: var(--t
 .copy-row { display: flex; align-items: center; justify-content: space-between; }
 .copy-hint { font-size: 11px; color: var(--gold); letter-spacing: 1px; text-transform: uppercase; }
 .copy-icon { font-size: 14px; filter: brightness(10); }
-.logo-section { text-align: center; padding: 8px 0 8px; display: none; border-top: 1px solid var(--border); margin-top: 0; }
+/* Logo section - Border removed */
+.logo-section { text-align: center; padding: 8px 0 8px; display: none; margin-top: 0; }
 .logo-section img { max-width: 624px; max-height: 312px; object-fit: contain; opacity: 0.9; filter: brightness(1.2) drop-shadow(0 0 20px rgba(245,166,35,0.6)); }
 .footer { text-align: center; padding: 20px; color: var(--gold); font-size: 12px; letter-spacing: 2px; text-transform: uppercase; }
 .loading-state { text-align: center; padding: 60px 24px; }
@@ -64,8 +67,8 @@ body { background: var(--bg); font-family: 'DM Sans', sans-serif; color: var(--t
     </div>
     
     <div class="btn-group" id="btnGroup" style="display:none;">
-        <a id="downloadBtn" href="#" class="btn btn-download" style="display:none;" onclick="downloadVideo(this.href); return false;">
-            <span class="btn-icon">⬇️</span> Download My Reel
+        <a id="reviewBtn" href="#" class="btn btn-review" style="display:none;" target="_blank">
+            <span class="btn-icon">⭐</span> Leave Us a Review — 30 Seconds
         </a>
     </div>
 
@@ -94,8 +97,8 @@ body { background: var(--bg); font-family: 'DM Sans', sans-serif; color: var(--t
         </div>
     </div>
 
-    <a id="reviewBtn" href="#" class="btn btn-review" style="display:none;" target="_blank">
-        <span class="btn-icon">⭐</span> Leave Us a Review — 30 Seconds
+    <a id="downloadBtn" href="#" class="btn btn-download" style="display:none;" onclick="downloadVideo(this.href); return false;">
+        <span class="btn-icon">⬇️</span> Download My Reel
     </a>
 
     <div class="logo-section" id="logoSection">
