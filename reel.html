@@ -6,7 +6,7 @@
 <title>Your Reel — Rod2Reel</title>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-:root { --gold: #F5A623; --gold-dark: #C4841A; --bg: #080808; --surface: #111111; --surface2: #1A1A1A; --border: #222222; --text: #FFFFFF; --muted: #666666; --subtle: #333333; }
+:root { --gold: #F5A623; --gold-dark: #C4841A; --bg: #080808; --surface: #111111; --surface2: #1A1A1A; --border: #222222; --text: #FFFFFF; --muted: #666666; --subtle: #333333; --ocean-blue: #0047AB; --ocean-dark: #003380; }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { background: var(--bg); font-family: 'DM Sans', sans-serif; color: var(--text); min-height: 100vh; overflow-x: hidden; }
 .header { position: relative; padding: 32px 24px 24px; text-align: center; background: linear-gradient(180deg, #0f0f0f 0%, var(--bg) 100%); border-bottom: 1px solid var(--border); overflow: hidden; }
@@ -20,12 +20,15 @@ body { background: var(--bg); font-family: 'DM Sans', sans-serif; color: var(--t
 .video-badge { position: absolute; top: 12px; left: 12px; background: rgba(0,0,0,0.7); backdrop-filter: blur(8px); border: 1px solid rgba(245,166,35,0.3); color: var(--gold); font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; padding: 5px 10px; border-radius: 20px; }
 .btn-group { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
 .btn { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 16px 24px; border-radius: 12px; font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 600; text-decoration: none; cursor: pointer; border: none; transition: all 0.2s ease; letter-spacing: 0.3px; }
-/* Review Button styling (Now at the Top) */
-.btn-review { background: var(--gold); color: #000; margin-bottom: 10px; }
+
+/* Review Button: Bold Text */
+.btn-review { background: var(--gold); color: #000; margin-bottom: 10px; font-weight: 800; }
 .btn-review:hover { background: var(--gold-dark); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(245,166,35,0.3); }
-/* Download Button styling (Now at the Bottom) */
-.btn-download { background: var(--surface2); color: var(--text); border: 1px solid var(--border); margin-top: 20px; margin-bottom: 24px; }
-.btn-download:hover { background: var(--subtle); transform: translateY(-1px); }
+
+/* Download Button: Ocean Blue */
+.btn-download { background: var(--ocean-blue); color: var(--text); margin-top: 20px; margin-bottom: 24px; }
+.btn-download:hover { background: var(--ocean-dark); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(0, 71, 171, 0.4); }
+
 .btn-icon { font-size: 18px; }
 .social-section { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 20px; margin-bottom: 8px; display: none; }
 .section-label { font-size: 11px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
@@ -38,7 +41,7 @@ body { background: var(--bg); font-family: 'DM Sans', sans-serif; color: var(--t
 .copy-row { display: flex; align-items: center; justify-content: space-between; }
 .copy-hint { font-size: 11px; color: var(--gold); letter-spacing: 1px; text-transform: uppercase; }
 .copy-icon { font-size: 14px; filter: brightness(10); }
-/* Logo section - Border removed */
+
 .logo-section { text-align: center; padding: 8px 0 8px; display: none; margin-top: 0; }
 .logo-section img { max-width: 624px; max-height: 312px; object-fit: contain; opacity: 0.9; filter: brightness(1.2) drop-shadow(0 0 20px rgba(245,166,35,0.6)); }
 .footer { text-align: center; padding: 20px; color: var(--gold); font-size: 12px; letter-spacing: 2px; text-transform: uppercase; }
@@ -68,7 +71,7 @@ body { background: var(--bg); font-family: 'DM Sans', sans-serif; color: var(--t
     
     <div class="btn-group" id="btnGroup" style="display:none;">
         <a id="reviewBtn" href="#" class="btn btn-review" style="display:none;" target="_blank">
-            <span class="btn-icon">⭐</span> Leave Us a Review — 30 Seconds
+            <span class="btn-icon">⭐</span> Leave Us a Review
         </a>
     </div>
 
