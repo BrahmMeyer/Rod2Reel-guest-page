@@ -19,13 +19,15 @@ body { background: var(--bg); font-family: 'DM Sans', sans-serif; color: var(--t
 .video-wrap video { width: 100%; display: block; }
 .video-badge { position: absolute; top: 12px; left: 12px; background: rgba(0,0,0,0.7); backdrop-filter: blur(8px); border: 1px solid rgba(245,166,35,0.3); color: var(--gold); font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; padding: 5px 10px; border-radius: 20px; }
 .btn-group { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
+
+/* Uniform Button Base Style */
 .btn { display: flex; align-items: center; justify-content: center; gap: 10px; padding: 16px 24px; border-radius: 12px; font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 600; text-decoration: none; cursor: pointer; border: none; transition: all 0.2s ease; letter-spacing: 0.3px; }
 
-/* Review Button: Bold Text */
-.btn-review { background: var(--gold); color: #000; margin-bottom: 10px; font-weight: 800; }
+/* Review Button: Gold with Bold Text matching Download style */
+.btn-review { background: var(--gold); color: #000; margin-bottom: 10px; }
 .btn-review:hover { background: var(--gold-dark); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(245,166,35,0.3); }
 
-/* Download Button: Ocean Blue */
+/* Download Button: Ocean Blue matching Review style */
 .btn-download { background: var(--ocean-blue); color: var(--text); margin-top: 20px; margin-bottom: 24px; }
 .btn-download:hover { background: var(--ocean-dark); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(0, 71, 171, 0.4); }
 
